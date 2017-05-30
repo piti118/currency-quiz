@@ -103,7 +103,7 @@ class CurrencyQuiz extends Component {
     const answerpicked = id => this.onPicked(
       id, leftAmount, leftCurrency, rightAmount, rightCurrency);
     return (
-      <div className="quiz-container">
+      <div className="quiz-container vcenter">
         <div style={{ textAlign: 'center' }}>Which one is greater?</div>
         <div className="question-container">
           <ClickableCurrency

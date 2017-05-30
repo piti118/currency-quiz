@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Home extends Component {
   render() {
     return (
-      <div className="home-text">
+      <div className="home-text vcenter">
         <div>
           <h1>Welcome to Currency Quiz</h1>
           <div style={{ fontSize: 'small', paddingTop: '20px' }}>
