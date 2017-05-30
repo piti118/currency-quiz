@@ -1,19 +1,36 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import {
+  BrowserRouter as Router,
+  Route,
+  NavLink,
+} from 'react-router-dom';
+
 import './App.css';
+import Home from './components/Home';
+import CurrencyQuiz from './components/CurrencyQuiz';
+import CurrencyConverter from './components/CurrencyConverter';
+
+function TopBar() {
+  return (
+    <div className="topbar-container">
+      <NavLink exact to="/" activeClassName="topbar-active">Home</NavLink>
+      <NavLink exact to="/quiz" activeClassName="topbar-active">Quiz</NavLink>
+      <NavLink exact to="/converter" activeClassName="topbar-active">Converter</NavLink>
+    </div>
+  );
+}
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
+      <Router>
+        <div className="wrapper">
+          <TopBar />
+          <Route exact path="/" component={Home} />
+          <Route exact path="/quiz" component={CurrencyQuiz} />
+          <Route exact path="/converter" component={CurrencyConverter} />
         </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
+      </Router>
     );
   }
 }
